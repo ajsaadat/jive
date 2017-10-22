@@ -12,6 +12,10 @@ public class Deck {
 	
 	private List<Card> content = new ArrayList<>() ;
 	
+	public Deck(Deck deck){
+		content = new ArrayList<>(deck.getContent()) ;
+	}
+	
 	public Deck(List<Card> content){
 		if(content == null || content.isEmpty()){
 			throw new IllegalArgumentException("An empty deck can not be created.") ;
