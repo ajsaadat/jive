@@ -12,3 +12,18 @@ This assignment was done based on the following assumptions:
     second partial synchronized on a deck of card, ConcurrentDeckManager and finally non blocking one,     which is an experiment, NonBlockingDeckManager. 
 10)Application is only hooked to one of mentioned implementation of DeckManager, DeckManagerImpl at the time of submittion.
 
+Also find questions asked about the assignment and its answers:
+1) is this a multiple deck game? Meaning there are limitless number of decks created and kept track of ?
+2) how should a case like this be addressed, while someone is asking for a card, someone else shuffles it, or vice versa?
+3) should system keep track of deck status, meaning if the deck is shuffled or not, and if deck is shuffled prevent reshuffling ?
+4) can two players get a same card? if there are 2 or more concurrent calls to get card from the same deck. Are locking mechanics like synchronization acceptable or non-block algorithm should be used ?
+5) should be done this in memory or some persistence is required?
+
+their corresponding answers:
+- for persistence, memory only is ok, so you can use whatever you want to hold the cards
+- you can go multideck if you want, we do not specifically require it but it's always nice to see it
+- shuffling multiple time is ok
+- dealing the same card twice while asking from the same deck would render this API less attractive :)
+- for concurrency concerns, I would say go with what would be acceptable in a deck API.  It's a very generic API, no concept of a game is implemented, so a shuffle operation is always 
+  permitted, but correct results are expected.
+
