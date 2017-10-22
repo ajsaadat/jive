@@ -12,7 +12,7 @@ This assignment was done based on the following assumptions:
     second partial synchronized on a deck of card, ConcurrentDeckManager and finally non blocking one,     which is an experiment, NonBlockingDeckManager. 
 10)Application is only hooked to one of mentioned implementation of DeckManager, DeckManagerImpl at the time of submittion.
 
-Also find questions asked about the assignment and its answers:
+Also find questions asked about the assignment and their answers:
 1) is this a multiple deck game? Meaning there are limitless number of decks created and kept track of ?
 2) how should a case like this be addressed, while someone is asking for a card, someone else shuffles it, or vice versa?
 3) should system keep track of deck status, meaning if the deck is shuffled or not, and if deck is shuffled prevent reshuffling ?
