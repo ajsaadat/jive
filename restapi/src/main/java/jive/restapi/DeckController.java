@@ -23,8 +23,9 @@ public class DeckController {
 	    }
 	    
 	    @RequestMapping(method=RequestMethod.POST , value="/deck")
-	    public Long createADeck(){
+	    public Long createADeck() throws DeckNotFoundException{
 	    	Long deckID = dManager.createADeck() ; 
+	    	dManager.shuffleADeck(deckID);
 	    	return deckID ; 
 	    }
 	    
