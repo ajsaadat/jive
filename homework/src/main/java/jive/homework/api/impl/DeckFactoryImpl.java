@@ -9,7 +9,7 @@ import jive.homework.entity.Deck;
 
 public class DeckFactoryImpl implements DeckFactory {
 
-	private String[] suits = {"H", "S", "D", "C"} ;
+	private static String[] suits = {"H", "S", "D", "C"} ;
 	@Override
 	public Deck buildDeck() {
 		List<Card> cards = new ArrayList<>() ;
