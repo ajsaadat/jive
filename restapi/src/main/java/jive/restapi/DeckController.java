@@ -15,6 +15,7 @@ import jive.homework.error.EmptyDeckException;
 public class DeckController {
 
 	    private DeckManager dManager = DeckManagerImpl.getInstance() ;
+	    private final static String SUCCESSFUL_SHUFFLE = "Deck was successfully shuffled." ;
 
 	    @RequestMapping(method=RequestMethod.GET , value="/deck")
 	    public Card getACard(@RequestParam(value="deckID") Long deckID) throws DeckNotFoundException, EmptyDeckException {
@@ -30,8 +31,9 @@ public class DeckController {
 	    }
 	    
 	    @RequestMapping(method=RequestMethod.PUT , value="/deck")
-	    public void shuffleADeck(@RequestParam(value="deckID") Long deckID) throws DeckNotFoundException{
+	    public String shuffleADeck(@RequestParam(value="deckID") Long deckID) throws DeckNotFoundException{
 	    	dManager.shuffleADeck(deckID);
+	    	return SUCCESSFUL_SHUFFLE ;
 	    }
 	    
 }
