@@ -1,0 +1,14 @@
+This assignment was done based on the following assumptions:
+ 1)Once a deck of card was created, it can't be deleted. 
+ 2)An empty deck can not be deleted. 
+ 3)When a new deck is created, it is automatically shuffled. 
+ 4)When a deck is shuffled, its content at that time will be shuffled. For example, if
+    the deck has 10 cards left within it, those cards will be shuffled. 
+ 5)Shuffling on an empty deck has no effect. 
+ 6)A deck can be created by issuing a post to application URL.
+ 7)A deck can be shuffled by issuing a put with deckID parameter to application URL.
+ 8)A card can be retrieved from a deck by issuing a get with deckID parameter to application URL.
+ 9) There are three implementations of DeckManager, first fully synchronized version, DeckManagerImpl
+    second partial synchronized on a deck of card, ConcurrentDeckManager and finally non blocking one,     which is an experiment, NonBlockingDeckManager. 
+10)Application is only hooked to one of mentioned implementation of DeckManager, DeckManagerImpl at the time of submittion.
+
