@@ -56,6 +56,7 @@ public class NonBlockingDeckManager implements DeckManager {
 	        	Deck clonedDeck = new Deck(oldDeck) ; 
 	        	dOperator.shuffle(clonedDeck);
 	            updated = cachedDeck.compareAndSet(oldDeck, clonedDeck);
+	            oldDeck = cachedDeck.get() ;
 	        }
 			
 		}
