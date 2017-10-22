@@ -40,7 +40,7 @@ public class DeckManagerImpl implements DeckManager {
 	public synchronized void shuffleADeck(long deckID) throws DeckNotFoundException {
 		Deck cachedDeck = decks.get(deckID) ;
 		if(cachedDeck == null){
-			throw new DeckNotFoundException("Deck [" + deckID + " is not a valid deck.") ;
+			throw new DeckNotFoundException("Deck [" + deckID + "] is not a valid deck.") ;
 		}else{
 			dOperator.shuffle(cachedDeck) ; 
 		}

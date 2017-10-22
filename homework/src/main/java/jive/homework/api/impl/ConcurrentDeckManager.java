@@ -25,7 +25,7 @@ public class ConcurrentDeckManager implements DeckManager {
 	
 	public static ConcurrentDeckManager getInstance(){
 		if(dManager == null){
-			synchronized (dManager) {
+			synchronized (ConcurrentDeckManager.class) {
 				if(dManager == null){
 					dManager =  new ConcurrentDeckManager() ; 
 					return dManager ; 
@@ -47,7 +47,7 @@ public class ConcurrentDeckManager implements DeckManager {
 	public void shuffleADeck(long deckID) throws DeckNotFoundException {
 		Deck cachedDeck = decks.get(deckID) ;
 		if(cachedDeck == null){
-			throw new DeckNotFoundException("Deck [" + deckID + " is not a valid deck.") ;
+			throw new DeckNotFoundException("Deck [" + deckID + "] is not a valid deck.") ;
 		}else{
 			synchronized(cachedDeck){
 				decks.put(deckID, cachedDeck) ;
